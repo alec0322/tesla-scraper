@@ -25,7 +25,7 @@ driver = initialize_chrome_webdriver()
 driver.get("https://www.tesla.com/inventory/used/m3?PAINT=BLACK,GREY,RED&INTERIOR=PREMIUM_BLACK&VehicleHistory=CLEAN&Year=2022,2023,2024&arrangeby=distance&zip=33178&range=0")
 
 # Force the script to wait for 15 seconds and let the inventory load
-time.sleep(15)
+time.sleep(30)
 
 wait = WebDriverWait(driver, 15)
 results_container = wait.until(EC.visibility_of_element_located(
