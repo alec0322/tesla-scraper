@@ -35,5 +35,6 @@ jobs:
           python3 -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Echo message
-        run: echo "This is a test"
+      - name: Run scraper
+        run: |
+          python3 scraper.py
