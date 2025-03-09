@@ -1,0 +1,26 @@
+name: Inventory Checker
+
+on:
+  schedule:
+    - cron: '0 */3 * * *'
+  workflow_dispatch:
+
+jobs:
+  inventory-checker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+
+      - name: Install Chrome
+        run: |
+          sudo apt update
+          sudo apt install -y wget
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo apt install -y ./google-chrome-stable_current_amd64.deb
+      
+      - name: Verify Chrome installation
+        run: google-chrome --version
+
+      - name: Echo message
+        run: echo "This is a test"
